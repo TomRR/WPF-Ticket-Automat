@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BVG.TicketApp.Wpf", "BVG.TicketApp.Wpf\BVG.TicketApp.Wpf.csproj", "{A14AD9F6-01B0-4CC3-8A0D-85204E9E07E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A14AD9F6-01B0-4CC3-8A0D-85204E9E07E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14AD9F6-01B0-4CC3-8A0D-85204E9E07E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14AD9F6-01B0-4CC3-8A0D-85204E9E07E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14AD9F6-01B0-4CC3-8A0D-85204E9E07E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF2BEDD0-DECD-4DCA-B3E6-47E0B0843F86}
+	EndGlobalSection
+EndGlobal

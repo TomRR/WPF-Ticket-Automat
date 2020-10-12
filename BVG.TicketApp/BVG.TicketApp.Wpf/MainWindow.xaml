@@ -1,0 +1,57 @@
+﻿<Window x:Class="BVG.TicketApp.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BVG.TicketApp.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontSize="36">Select Your Desired Ticket(s)</TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="0" FontSize="30">BVG</TextBlock>
+
+        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{Binding TicketList}" Cursor="Hand" Name="TicketList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Margin="5" Padding="20" Command="{Binding AddToOrder}" Click="OrderTicket"  CommandParameter="{Binding}" Content="{Binding FullInformation}" Name="TicketButton"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox Name="OrderList" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="24"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="24" Text="TOTAL:" TextAlignment="Center"/>
+        <TextBlock Name="PriceList" Grid.Column="2" Grid.Row="2" FontSize="24"/>
+
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Pay" Click="InstantiatePayment"></Button>
+
+
+        <ListBox Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{Binding MoneyList}" Cursor="Hand" Name="MoneyList" Visibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Margin="5" Padding="20" Width="100" Click="MoneyButton" Content="{Binding MoneyString}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <ListBox Name="PaymentList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" FontSize="20" Visibility="Hidden"/>
+        <ListBox Name="Payment" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" Visibility="Hidden" />
+        <TextBlock Name="Paid" Grid.Column="2" Grid.Row="1" FontSize="24"/>
+
+
+    </Grid>
+</Window>
