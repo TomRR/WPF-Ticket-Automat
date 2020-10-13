@@ -30,6 +30,7 @@ namespace BVG.TicketApp.Wpf
         private void OrderTicket(object sender, RoutedEventArgs e)
         {
             EuroSymbolTotal.Visibility = Visibility.Visible;
+            PayButton.IsEnabled = true;
             Button TicketButton = (Button)sender;
             string ticketInfo = TicketButton.Content.ToString();
             OrderList.Items.Add(ticketInfo);
@@ -57,6 +58,7 @@ namespace BVG.TicketApp.Wpf
             StartText.Visibility = Visibility.Hidden;
             PaidText.Visibility = Visibility.Visible;
             YourTicketText.Visibility = Visibility.Visible;
+            PayButton.IsEnabled = false;
 
         }        
         private void MoneyButton(object sender, RoutedEventArgs e)
