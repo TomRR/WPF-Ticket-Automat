@@ -58,30 +58,39 @@ namespace BVG.TicketApp.Wpf
         private void MoneyButton(object sender, RoutedEventArgs e)
         {
             Button MoneyButton= (Button)sender;
-            string paid = MoneyButton.Content.ToString();
-            decimal coinThrow = + Convert.ToDecimal(paid.Substring(0,4));
-            Payment.Items.Add(coinThrow + "");
-            decimal paidTotal = Convert.ToDecimal(Paid.Text.Substring(0,4));
-
-            decimal total = Convert.ToDecimal(PriceList.Text);
-
-            if (paidTotal > total)
-            {
-                MessageBox.Show("Please Take your Receive");
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-                Application.Current.Shutdown();
-            }
+            string coinThrow = MoneyButton.Content.ToString();
+            Payment.Items.Add(coinThrow);
 
             if (Paid.Text == "")
             {
-                string price = paid.Substring(0, 4);
+                string price = coinThrow.Substring(0, 4);
                 Paid.Text = $"{price}";
             }
             else
             {
-                decimal newPrice = Convert.ToDecimal(Paid.Text) + Convert.ToDecimal(paid.Substring(0, 4));
+                decimal newPrice = Convert.ToDecimal(Paid.Text) + Convert.ToDecimal(coinThrow.Substring(0, 4));
                 Paid.Text = $"{newPrice}";
             }
+
+
+            decimal totalPaid = Convert.ToDecimal(Paid.Text);
+
+            decimal total = Convert.ToDecimal(PriceList.Text);
+
+            //decimal coinThrow = + Convert.ToDecimal(paid.Substring(0,4));
+            //decimal paidTotal = Convert.ToDecimal(Paid.Text.Substring(0,4));
+
+            //decimal total = Convert.ToDecimal(PriceList.Text);
+
+            if (totalPaid >= total)
+            {
+                decimal change = totalPaid - total;
+                MessageBox.Show($"Please Take your Receive and your Change \n Total Change: {change}");
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
+
+
         }
     }
 }

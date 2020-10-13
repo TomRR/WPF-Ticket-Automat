@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontSize="36">Select Your Desired Ticket(s)</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="36">Select Your Desired Ticket(s)</TextBlock>
         <TextBlock Grid.Column="3" Grid.Row="0" FontSize="30">BVG</TextBlock>
 
         <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{Binding TicketList}" Cursor="Hand" Name="TicketList">
@@ -48,8 +48,8 @@
         </ListBox>
 
 
-        <ListBox Name="PaymentList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" FontSize="20" Visibility="Hidden"/>
-        <ListBox Name="Payment" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" Visibility="Hidden" />
+        <ListBox Name="PaymentList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" FontSize="20"  Visibility="Hidden"/>
+        <ListBox Name="Payment" Grid.Column="1" Grid.Row="1" FontSize="20"  Visibility="Hidden"/>
         <TextBlock Name="Paid" Grid.Column="2" Grid.Row="1" FontSize="24"/>
 
 
