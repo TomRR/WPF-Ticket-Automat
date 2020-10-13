@@ -29,6 +29,7 @@ namespace BVG.TicketApp.Wpf
 
         private void OrderTicket(object sender, RoutedEventArgs e)
         {
+            EuroSymbolTotal.Visibility = Visibility.Visible;
             Button TicketButton = (Button)sender;
             string ticketInfo = TicketButton.Content.ToString();
             OrderList.Items.Add(ticketInfo);
@@ -53,10 +54,14 @@ namespace BVG.TicketApp.Wpf
             PaymentList.Visibility = Visibility.Visible;
             OrderList.Visibility = Visibility.Hidden; 
             Payment.Visibility = Visibility.Visible;
+            StartText.Visibility = Visibility.Hidden;
+            PaidText.Visibility = Visibility.Visible;
+            YourTicketText.Visibility = Visibility.Visible;
 
         }        
         private void MoneyButton(object sender, RoutedEventArgs e)
         {
+            EuroSymbolPaid.Visibility = Visibility.Visible;
             Button MoneyButton= (Button)sender;
             string coinThrow = MoneyButton.Content.ToString();
             Payment.Items.Add(coinThrow);
@@ -77,15 +82,10 @@ namespace BVG.TicketApp.Wpf
 
             decimal total = Convert.ToDecimal(PriceList.Text);
 
-            //decimal coinThrow = + Convert.ToDecimal(paid.Substring(0,4));
-            //decimal paidTotal = Convert.ToDecimal(Paid.Text.Substring(0,4));
-
-            //decimal total = Convert.ToDecimal(PriceList.Text);
-
             if (totalPaid >= total)
             {
                 decimal change = totalPaid - total;
-                MessageBox.Show($"Please Take your Receive and your Change \n Total Change: {change}");
+                MessageBox.Show($"Please Take your Receive and your Change \nTotal Change: {change}€");
                 System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                 Application.Current.Shutdown();
             }
